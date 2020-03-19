@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: consumer-feign
+  zipkin:
+    base-url: http://127.0.0.1/8041
 
 feign:
   hystrix:
