@@ -5,7 +5,11 @@ spring:
   application:
     name: consumer-feign
   zipkin:
-    base-url: http://127.0.0.1/8041
+    base-url: http://127.0.0.1.8041/
+    discovery-client-enabled: false
+  sleuth:
+    sampler:
+      probability: 1.0
 
 feign:
   hystrix:
