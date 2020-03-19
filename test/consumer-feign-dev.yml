@@ -10,6 +10,8 @@ spring:
     locator:
       discovery:
         enabled: true
+    service:
+      name: ZIPKIN-SERVER
   sleuth:
     sampler:
       probability: 1.0
