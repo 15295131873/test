@@ -12,6 +12,8 @@ spring:
         enabled: true
     service:
       name: ZIPKIN-SERVER
+    sender:
+      type: web
   sleuth:
     sampler:
       probability: 1.0
