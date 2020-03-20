@@ -5,16 +5,18 @@ spring:
   application:
     name: consumer-feign
   zipkin:
+    enabled: true
     base-url: http://127.0.0.1.9411/
     discovery-client-enabled: false
     locator:
       discovery:
         enabled: true
-    service:
-      name: ZIPKIN-SERVER
     sender:
       type: web
   sleuth:
+    web:
+      client:
+        enabled: true
     sampler:
       probability: 1.0
 
