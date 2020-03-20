@@ -7,7 +7,6 @@ spring:
   zipkin:
     enabled: true
     base-url: http://127.0.0.1.9411
-    discovery-client-enabled: false
     locator:
       discovery:
         enabled: true
