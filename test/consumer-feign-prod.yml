@@ -4,23 +4,6 @@ server:
 spring:
   application:
     name: consumer-feign
-  zipkin:
-    base-url: http://127.0.0.1.8041/
-    locator:
-      discovery:
-        enabled: true
-  sleuth:
-    sampler:
-      probability: 1.0
-    integration:
-      enabled: false
-    web:
-      client:
-        enabled: true
-
-feign:
-  hystrix:
-    enabled: true
 
 eureka:
   client:
