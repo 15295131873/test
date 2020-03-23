@@ -5,6 +5,9 @@ spring:
   application:
     name: consumer-feign
 
+  zipkin:
+    base-url: http://127.0.0.1:8041
+
 eureka:
   client:
     register-with-eureka: true #表示是否注册自身到eureka服务器
