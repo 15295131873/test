@@ -5,6 +5,11 @@ spring:
   application:
     name: consumer-feign
 
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8034
+
   zipkin:
     base-url: http://127.0.0.1:8041
 
