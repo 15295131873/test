@@ -1,25 +1,2 @@
-server:
-  port: 8091
-
-spring:
-  application:
-    name: consumer-feign
-
-  boot:
-    admin:
-      client:
-        url: http://127.0.0.1:8034
-
-  zipkin:
-    base-url: http://127.0.0.1:8041
-
-eureka:
-  client:
-    register-with-eureka: true #表示是否注册自身到eureka服务器
-    fetch-registry: true #是否从eureka上获取注册信息
-    registry-fetch-interval-seconds: 5 #间隔多久去拉取服务注册信息
-    serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/,http://127.0.0.1:8763/eureka/
-  instance:
-    instance-id: comsumer-1
-    prefer-ip-address: true
+shichang:
+  test: 123
