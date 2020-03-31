@@ -7,7 +7,7 @@ spring:
       client:
         url: http://127.0.0.1:8034
         instance:
-          service-base-url: http://127.0.0.1:8091
+          service-base-url: http://${spring.cloud.client.ip-address}:${server.port}
   zipkin:
     base-url: http://127.0.0.1:8041
   sleuth:
@@ -66,4 +66,4 @@ logging:
   level:
     root: info
 shichang:
-  test: ceshi333
+  test: ces
