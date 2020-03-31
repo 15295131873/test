@@ -1,0 +1,22 @@
+server:
+  port: 8034
+spring:
+  zipkin:
+    base-url: http://127.0.0.1:8041
+  sleuth:
+    sampler:
+      probability: 1.0
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: cztest
+    password: cztest
+    virtual-host: /ego # 虚拟主机
+eureka:
+  client:
+    register-with-eureka: true #表示是否注册自身到eureka服务器
+    fetch-registry: true #是否从eureka上获取注册信息
+    registry-fetch-interval-seconds: 5 #间隔多久去拉取服务注册信息
+    serviceUrl:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/,http://eureka3:8763/eureka/ #注册节点地址
+
