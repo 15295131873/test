@@ -1,0 +1,43 @@
+server:
+  port: 8021
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8034
+  zipkin:
+    base-url: http://127.0.0.1:8041
+  sleuth:
+    sampler:
+      probability: 1.0
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: user
+          uri: lb://CONSUMER-FEIGN
+          predicates:
+            - Path=/user/**
+          filters:
+            - RewritePath=/user/(?<segment>.*), /$\{segment}
+            - name: RequestRateLimiter
+              args:
+                key-resolver: '#{@uriKeyResolver}' #使用SpEL按名称引用bean
+                redis-rate-limiter.replenishRate: 2 #允许用户每秒处理多少个请求
+                redis-rate-limiter.burstCapacity: 2000 #令牌桶的容量，允许在一秒钟内完成的最大请求数
+
+eureka:
+  client:
+    register-with-eureka: true #表示是否注册自身到eureka服务器
+    fetch-registry: true #是否从eureka上获取注册信息
+    registry-fetch-interval-seconds: 5 #间隔多久去拉取服务注册信息
+    serviceUrl:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/,http://eureka3:8763/eureka/ #注册节点地址
+
