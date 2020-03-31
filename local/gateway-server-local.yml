@@ -10,11 +10,19 @@ spring:
     admin:
       client:
         url: http://127.0.0.1:8034
+        instance:
+          service-base-url: http://${spring.cloud.client.ip-address}:${server.port}
   zipkin:
     base-url: http://127.0.0.1:8041
   sleuth:
     sampler:
       probability: 1.0
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: cztest
+    password: cztest
+    virtual-host: /ego # 虚拟主机    
   cloud:
     gateway:
       discovery:
