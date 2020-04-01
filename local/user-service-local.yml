@@ -25,11 +25,11 @@ spring:
     username: root
     password: root
   redis:
-    database: 1
+    database: 0
     password: 123456
     sentinel:
-      master: master
-      nodes: 127.0.01:6379,127.0.0.1:26379
+      master: mymaster
+      nodes: 127.0.0.1:26379
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*Mapper.xml
