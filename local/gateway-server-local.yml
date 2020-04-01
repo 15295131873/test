@@ -49,5 +49,5 @@ eureka:
     fetch-registry: true #是否从eureka上获取注册信息
     registry-fetch-interval-seconds: 5 #间隔多久去拉取服务注册信息
     serviceUrl:
-      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/,http://eureka3:8763/eureka/ #注册节点地址
+      defaultZone: http://eureka1:8081/eureka/,http://eureka2:8082/eureka/,http://eureka3:8083/eureka/ #注册节点地址
 
