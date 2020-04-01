@@ -43,12 +43,5 @@ spring:
                 redis-rate-limiter.replenishRate: 2 #允许用户每秒处理多少个请求
                 redis-rate-limiter.burstCapacity: 2000 #令牌桶的容量，允许在一秒钟内完成的最大请求数
 
-eureka:
-  client:
-    register-with-eureka: true #表示是否注册自身到eureka服务器
-    fetch-registry: true #是否从eureka上获取注册信息
-    registry-fetch-interval-seconds: 5 #间隔多久去拉取服务注册信息
-    serviceUrl:
-      defaultZone: http://eureka1:9501/eureka/,http://eureka2:9501/eureka/,http://eureka3:9501/eureka/ #注册节点地址
 
 
