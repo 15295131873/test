@@ -9,7 +9,7 @@ spring:
         instance:
           service-base-url: http://${spring.cloud.client.ip-address}:${server.port}
   zipkin:
-    base-url: http://127.0.0.1:8041
+    base-url: lb://ZIPKIN-SERVER
     sender:
       type: web
   sleuth:
