@@ -29,6 +29,7 @@ spring:
     model: sentinel
     # Redis数据库索引（默认为0）
     database: 0
+    password: 123456
     sentinel:
       master: mymaster
       nodes: 127.0.0.1:6379,127.0.0.1:26379
