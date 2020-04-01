@@ -1,5 +1,5 @@
 server:
-  port: 9506
+  port: 8021
 
 spring:
   redis:
@@ -9,7 +9,7 @@ spring:
   boot:
     admin:
       client:
-        url: lb://ADMIN-SERVER
+        url: http://127.0.0.1:8034
         instance:
           service-base-url: http://${spring.cloud.client.ip-address}:${server.port}
   zipkin:
@@ -47,8 +47,7 @@ eureka:
   client:
     register-with-eureka: true #表示是否注册自身到eureka服务器
     fetch-registry: true #是否从eureka上获取注册信息
-    registry-fetch-interval-seconds: 5 #间隔多久去拉取服务注册信息
+    registry-fetch-interval-seconds: 30 #间隔多久去拉取服务注册信息
     serviceUrl:
-      defaultZone: http://eureka1:9501/eureka/,http://eureka2:9501/eureka/,http://eureka3:9501/eureka/ #注册节点地址
-
+      defaultZone: http://eureka:8100/eureka/ #注册节点地址
 
