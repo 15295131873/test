@@ -62,7 +62,7 @@ eureka:
     fetch-registry: true #是否从eureka上获取注册信息
     registry-fetch-interval-seconds: 30 #间隔多久去拉取服务注册信息
     serviceUrl:
-      defaultZone: http://eureka1:8100/eureka/ #注册节点地址
+      defaultZone: http://eureka:8100/eureka/ #注册节点地址
 
 logging:
   level:
