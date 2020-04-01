@@ -28,6 +28,7 @@ spring:
     database: 0
     password: 123456
     sentinel:
+      master: mymaster
       nodes: 127.0.0.1:6379,127.0.0.1:26379
 
 mybatis-plus:
